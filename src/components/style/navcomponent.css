@@ -1,0 +1,27 @@
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2em;
+  background-color: #a5d8ff;
+}
+
+.nav-container a {
+  display: block;
+  color: #495057;
+  font-size: 1.6em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.nav-container a:hover {
+  display: block;
+  color: #3b5bdb;
+}
+
+.nav-container a.active {
+  display: block;
+  color: #111;
+}
