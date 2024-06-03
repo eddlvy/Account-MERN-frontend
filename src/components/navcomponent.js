@@ -1,8 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
 import './style/navcomponent.css';
+import { Context } from "../context/context";
 
 function NavComponent() {
+  const { setLogged } = useContext(Context)
+  function handleSalir() {
+    setLogged(false)
+  }
   return (
     <div className="nav-container">
       <NavLink className={({ isActive, isPending }) =>
@@ -22,7 +28,8 @@ function NavComponent() {
       } to="/user/historia">Historia de Transacciones</NavLink>
       <NavLink className={({ isActive, isPending }) =>
         isPending ? "pending" : isActive ? "active" : ""
-      } to="/">Salir</NavLink>
+      } to="/" onClick={handleSalir}>Salir</NavLink>
+
     </div>
   )
 }
