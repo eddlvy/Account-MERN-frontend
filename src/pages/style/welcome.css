@@ -40,6 +40,18 @@
   z-index: -1;
 }
 
+.container-login {
+  width: 30%;
+  position: absolute;
+  transform: translateX(20em);
+}
+
+.container-register {
+  width: 30%;
+  position: absolute;
+  transform: translate(-20em, 0.000001em);
+}
+
 .container-footer {
   text-align: center;
   width: 100%;

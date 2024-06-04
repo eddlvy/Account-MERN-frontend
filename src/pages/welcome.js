@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
+import { Context } from "../context/context";
 import LoginComponent from "../components/login";
 import RegisterComponent from "../components/register";
 import './style/welcome.css';
@@ -8,6 +9,18 @@ import img from '../assets/pexels-nietjuh-796602.jpg';
 
 function WelcomePage() {
   let date = new Date();
+
+  const { setMes } = useContext(Context);
+
+
+  useEffect(() => {
+    fetch("http://localhost:5000").then(res => res.json()).then((data) => {
+      setMes(data[0].mes)
+    }, (error) => {
+      console.log(error)
+    }
+    )
+  })
 
   return (
 

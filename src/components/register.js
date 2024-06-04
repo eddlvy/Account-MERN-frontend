@@ -7,7 +7,6 @@ function RegisterComponent() {
   const [nombre, setNombre] = useState("");
   const [clave, setClave] = useState("");
   const [state, setState] = useState();
-  const text = " ";
 
   function postToServer(e) {
     const dataToPost = {
@@ -23,9 +22,9 @@ function RegisterComponent() {
       <p className="text-register">Eres Nuevo Aqui? Registrate</p>
       <form className="form-register" onSubmit={postToServer} method="post">
         <label className="label-register">Escribe Nombre de Usuario</label>
-        <input className="input-register" type="text" id="nombre" value={nombre} onChange={(e) => { setNombre(e.target.value) }} placeholder={text} required></input>
+        <input className="input-register" type="text" id="nombre-register" value={nombre} onChange={(e) => { setNombre(e.target.value) }} required></input>
         <label className="label-register">Escribe Clave de Entrada</label>
-        <input className="input-register" type="password" id="clave" value={clave} onChange={(e) => { setClave(e.target.value) }} placeholder={text} required></input>
+        <input className="input-register" type="password" id="clave-register" value={clave} onChange={(e) => { setClave(e.target.value) }} required></input>
         <input className="submit-register" type="submit" value="Click Enviar"></input>
       </form>
       <p className="text-register">{state}</p>

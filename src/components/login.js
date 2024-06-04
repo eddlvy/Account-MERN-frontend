@@ -9,9 +9,15 @@ function LoginComponent() {
   const [nombre, setNombre] = useState("");
   const [clave, setClave] = useState("");
   const { logged, setLogged } = useContext(Context);
-  const [state, setState] = useState("")
+  const [state, setState] = useState("");
+
   let navigate = useNavigate();
-  const text = " "
+
+
+
+
+
+
 
 
   function postToServer(e) {
@@ -31,15 +37,17 @@ function LoginComponent() {
 
   return (
     <div className="div-login">
+
       <p className="text-login">Ya tienes Cuenta?  Accede</p>
       <form className="form-login" onSubmit={postToServer} method="post">
         <label className="label-login">Escribe Nombre de Usuario</label>
-        <input className="input-login" type="text" id="nombre" value={nombre} onChange={(e) => { setNombre(e.target.value) }} placeholder={text} required></input>
+        <input className="input-login" type="text" id="nombre-login" value={nombre} onChange={(e) => { setNombre(e.target.value) }} required></input>
         <label className="label-login">Escribe Clave de Entrada</label>
-        <input className="input-login" type="password" id="clave" value={clave} onChange={(e) => { setClave(e.target.value) }} placeholder={text} required></input>
+        <input className="input-login" type="password" id="clave-login" value={clave} onChange={(e) => { setClave(e.target.value) }} required></input>
         <input className="submit-login" type="submit" value="Doble Click Entrar"></input>
       </form>
       <p className="text-login">{!logged ? state : ""}</p>
+
     </div>
   )
 
