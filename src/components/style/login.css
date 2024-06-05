@@ -7,6 +7,11 @@
   padding: 2.5em;
   opacity: 0.9;
   border-radius: 9px;
+  transition: all 0.3s;
+}
+
+.div-login:hover {
+  transform: scale(1.1);
 }
 
 .form-login {
@@ -40,10 +45,17 @@
   border-style: inset;
 }
 
+
+
 .submit-login {
   padding: 0.3em;
   font-size: 1.4em;
   font-weight: 500;
   font-style: oblique;
   border-radius: 9px;
+  transition: all 0.3s;
+}
+
+.submit-login:hover {
+  background-color: #74c0fc;
 }

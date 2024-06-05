@@ -33,7 +33,7 @@ function LoginComponent() {
   return (
     <div className="div-login">
 
-      <p className="text-login">Ya tienes Cuenta?  Accede</p>
+      <p className="text-login">Accede Aqui</p>
       <form className="form-login" onSubmit={postToServer} method="post">
         <label className="label-login">Escribe Nombre de Usuario</label>
         <input className="input-login" type="text" id="nombre-login" onChange={(e) => { setNombre(e.target.value) }} required></input>
