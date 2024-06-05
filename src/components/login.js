@@ -10,15 +10,9 @@ function LoginComponent() {
   const [clave, setClave] = useState("");
   const { logged, setLogged } = useContext(Context);
   const [state, setState] = useState("");
+  const { token, setToken } = useContext(Context);
 
   let navigate = useNavigate();
-
-
-
-
-
-
-
 
   function postToServer(e) {
     const dataToPost = {
@@ -28,9 +22,10 @@ function LoginComponent() {
 
 
     e.preventDefault();
-    axios.post('http://localhost:5000/login', dataToPost).then(res => res.status === 200 && res.data.token ? setLogged(true) : "Usuario No Autenticado").catch(error => { setState(`Email o Clave no Correcta, Intente de nuevo`) })
+    axios.post('http://localhost:5000/login', dataToPost).then(res => setToken(res.data.token)).catch(error => { setState(`Email o Clave no Correcta, Intente de nuevo`) })
 
-    if (logged) {
+    if (token) {
+      setLogged(true)
       navigate('/user/home');
     }
   }
@@ -41,12 +36,13 @@ function LoginComponent() {
       <p className="text-login">Ya tienes Cuenta?  Accede</p>
       <form className="form-login" onSubmit={postToServer} method="post">
         <label className="label-login">Escribe Nombre de Usuario</label>
-        <input className="input-login" type="text" id="nombre-login" value={nombre} onChange={(e) => { setNombre(e.target.value) }} required></input>
+        <input className="input-login" type="text" id="nombre-login" onChange={(e) => { setNombre(e.target.value) }} required></input>
         <label className="label-login">Escribe Clave de Entrada</label>
         <input className="input-login" type="password" id="clave-login" value={clave} onChange={(e) => { setClave(e.target.value) }} required></input>
         <input className="submit-login" type="submit" value="Doble Click Entrar"></input>
       </form>
       <p className="text-login">{!logged ? state : ""}</p>
+
 
     </div>
   )

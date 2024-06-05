@@ -1,16 +1,16 @@
-import React, { useContext } from "react";
+import React from "react";
 import NavComponent from "../components/navcomponent";
 import "./style/home.css";
-import { Context } from "../context/context";
+import MesComponent from "../components/mesHome";
 
 
 
 function HomePage() {
-  const { mes } = useContext(Context)
   return (
     <div>
       <NavComponent></NavComponent>
-      <p>{mes}</p>
+      <MesComponent></MesComponent>
+
 
 
     </div>
