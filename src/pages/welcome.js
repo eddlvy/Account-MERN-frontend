@@ -1,7 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { Context } from "../context/context";
 import LoginComponent from "../components/login";
-import RegisterComponent from "../components/register";
 import './style/welcome.css';
 import axios from "axios";
 import img from '../assets/pexels-nietjuh-796602.jpg';

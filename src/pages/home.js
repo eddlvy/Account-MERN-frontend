@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../context/context";
 import axios from "axios";
 import NavComponent from "../components/navcomponent";
@@ -12,12 +12,37 @@ function HomePage() {
   const { token } = useContext(Context);
   const [state, setState] = useState("");
   const { ingresos, setIngresos } = useContext(Context);
-  const [gastosTotal, setGastosTotal] = useState(0);
+  const [gastos, setGastos] = useState([])
   const headers = {
     headers: {
       "Authorization": `Bearer ${token}`
     }
   };
+
+  useEffect(() => {
+    axios.get(`http://localhost:5000/user/home/gastosget/${mes}`, headers)
+      .then(res => setGastos(res.data)).catch(error => setState(error))
+  })
+
+
+  const renta = gastos.renta || 0;
+  const deuda = gastos.deuda || 0;
+  const cuba = gastos.cuba || 0;
+  const electricidad = gastos.electricidad || 0;
+  const agua = gastos.agua || 0;
+  const gas = gastos.gas || 0;
+  const arnona = gastos.arnona || 0;
+  const hot = gastos.hot || 0;
+  const internet = gastos.internet || 0;
+  const bl = gastos.b || 0;
+  const gasolinaSum = gastos.gasolina?.reduce((acc, val) => acc + val, 0) || 0;
+  const comidaSum = gastos.comida?.reduce((acc, val) => acc + val, 0) || 0;
+  const saludSum = gastos.salud?.reduce((acc, val) => acc + val, 0) || 0;
+  const tarjetasSum = gastos.tarjetas?.reduce((acc, val) => acc + val, 0) || 0;
+  const otrosSum = gastos.otros?.reduce((acc, val) => acc + val, 0) || 0;
+  const total = renta + deuda + cuba + electricidad + agua + gas + arnona + hot + internet + bl + gasolinaSum + comidaSum + saludSum + tarjetasSum + otrosSum
+
+
 
   function handleSelectMes(e) {
     const data = {
@@ -38,7 +63,7 @@ function HomePage() {
   };
 
   function estadoMes() {
-    let sum = ingresos - gastosTotal;
+    let sum = ingresos - total;
     if (sum >= 0) {
 
       return <span className="superavit">Superavit : {sum}</span>
@@ -61,7 +86,7 @@ function HomePage() {
         </div >
         <h2 className="mes-header">{mes}</h2>
         <p className="text-ingresos">Ingresos : {ingresos} </p>
-        <p className="text-gastos">Gastos   : {gastosTotal}</p>
+        <p className="text-gastos">Gastos   : {total}</p>
         <p className="estado-mes">{estadoMes()}</p>
         <form className="form-ingresos" onSubmit={handleIngresosSubmit} method="post">
           <label className="label-ingresos">Ingresos Totales Mes  </label>
