@@ -14,6 +14,7 @@ function WelcomePage() {
   const { setIngresos } = useContext(Context);
 
 
+  // mes context
   useEffect(() => {
     fetch("http://localhost:5000/mes").then(res => res.json()).then((data) => {
       setMes(data[0].mes)
@@ -23,9 +24,13 @@ function WelcomePage() {
     )
   })
 
+  // ingresos context
+
   useEffect(() => {
     axios.get(`http://localhost:5000/ingresos/${mes}`).then(res => setIngresos(res.data.total)).catch(error => { setIngresos(error) })
   });
+
+
 
 
   return (

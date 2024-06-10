@@ -2,102 +2,112 @@ import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../context/context";
 import axios from "axios";
 import NavComponent from "../components/navcomponent";
+import IngresosComponent from "../components/ingresosComponent"
+import MesComponent from "../components/mesComponent";
 import "./style/home.css";
 
-
-
-
 function HomePage() {
-  const { mes, setMes } = useContext(Context);
+  const { mes } = useContext(Context);
   const { token } = useContext(Context);
   const [state, setState] = useState("");
-  const { ingresos, setIngresos } = useContext(Context);
   const [gastos, setGastos] = useState([])
+
+  const [renta, setRenta] = useState(0)
+  const [concepto, setConcepto] = useState("")
+  // const [fields, setFields] = useContext([])
+  // const { deuda, setDeuda } = useContext(Context)
+  // const { cuba, setCuba } = useContext(Context)
+  // const { electricidad, setElec } = useContext(Context)
+  // const { agua, setAgua } = useContext(Context)
+  // const { gas, setGas } = useContext(Context)
+  // const { arnona, setArnona } = useContext(Context)
+  // const { hot, setHot } = useContext(Context)
+  // const { internet, setInternet } = useContext(Context)
+  // const { bl, setBl } = useContext(Context)
+
+  // const { gasolina, setGasolina } = useContext(Context)
+  // const { comida, setComida } = useContext(Context)
+  // const { salud, setSalud } = useContext(Context)
+  // const { tarjetas, setTarjetas } = useContext(Context)
+  // const { otros, setOtros } = useContext(Context)
+  // const [total, setTotal] = useState(0)
+  // const [gasolinaSum, setGasolinaSum] = useState(0)
+  // const [tarjetasSum, setTarjetasSum] = useState(0)
+  // const [otrosSum, setOtrosSum] = useState(0)
+  // const [saludSum, setSaludSum] = useState(0)
+  // const [comidaSum, setComidaSum] = useState(0)
+
+
   const headers = {
     headers: {
       "Authorization": `Bearer ${token}`
     }
   };
 
+
+
+  // gastos del mes get DB
   useEffect(() => {
     axios.get(`http://localhost:5000/user/home/gastosget/${mes}`, headers)
-      .then(res => setGastos(res.data)).catch(error => setState(error))
-  })
-
-
-  const renta = gastos.renta || 0;
-  const deuda = gastos.deuda || 0;
-  const cuba = gastos.cuba || 0;
-  const electricidad = gastos.electricidad || 0;
-  const agua = gastos.agua || 0;
-  const gas = gastos.gas || 0;
-  const arnona = gastos.arnona || 0;
-  const hot = gastos.hot || 0;
-  const internet = gastos.internet || 0;
-  const bl = gastos.b || 0;
-  const gasolinaSum = gastos.gasolina?.reduce((acc, val) => acc + val, 0) || 0;
-  const comidaSum = gastos.comida?.reduce((acc, val) => acc + val, 0) || 0;
-  const saludSum = gastos.salud?.reduce((acc, val) => acc + val, 0) || 0;
-  const tarjetasSum = gastos.tarjetas?.reduce((acc, val) => acc + val, 0) || 0;
-  const otrosSum = gastos.otros?.reduce((acc, val) => acc + val, 0) || 0;
-  const total = renta + deuda + cuba + electricidad + agua + gas + arnona + hot + internet + bl + gasolinaSum + comidaSum + saludSum + tarjetasSum + otrosSum
+      .then(res => setGastos(res.data)).catch(error => setState("No hay Datos del mes en curso"))
+  }, []);
 
 
 
-  function handleSelectMes(e) {
-    const data = {
-      mes: mes
-    }
-    axios.post('http://localhost:5000/user/home/mes', data, headers).then(res => setState("Mes Cambiado")).catch(error => setState(`Error Posting , ${error}`))
+
+
+  // gasto update handler
+
+  function updateGastoRenta(e) {
     e.preventDefault();
-  };
-
-  function handleIngresosSubmit(e) {
     const dataToPost = {
-      mes: mes,
-      total: ingresos
+      concepto: concepto,
+      renta: renta,
     }
 
-    axios.post('http://localhost:5000/user/home/ingresos', dataToPost, headers).then(res => setState(res.data)).catch(error => setState(`Error Posting , ${error}`));
-    e.preventDefault();
-  };
-
-  function estadoMes() {
-    let sum = ingresos - total;
-    if (sum >= 0) {
-
-      return <span className="superavit">Superavit : {sum}</span>
-    } else {
-      return <span className="deficit">Deficit : {sum}</span>
-    }
+    axios.post(`http://localhost:5000/user/home/gastosupdate/${mes}/renta`, dataToPost, headers).then(res => setState("Gastos Actualizados")).catch(error => setState(`Error , ${error}`))
   }
+
+  // gasto plan get handler
+
+  // gasto estado function
+
+  // analizar estado del mes function
+  // function estadoMes() {
+
+  //   let sum = ingresos - total;
+  //   if (sum >= 0) {
+
+  //     return <span className="superavit">Superavit : {sum}</span>
+  //   } else {
+  //     return <span className="deficit">Deficit : {sum}</span>
+  //   }
+  // }
+
   return (
     <div className="container-main">
       <NavComponent></NavComponent>
-      <div className="container-mes">
-        <div className="select-mes">
+      <MesComponent></MesComponent>
+      <IngresosComponent></IngresosComponent>
 
-          <form className="form-mes" onSubmit={handleSelectMes} method="post">
-            <label className="label-mes">Mes Actual , escribe nuevo mes para cambiar  </label>
-            <input className="mes-input" type="text" id="mes" value={mes} onChange={(e) => setMes(e.target.value)} />
-            <input className="mes-submit" type="submit" value="Click para iniciar Mes" />
-            <p className="error-text">{state}</p>
+
+      <div className="container-gastos">
+        <div className="gasto">
+          <p className="gasto-text">Renta</p>
+          <form className="form-gasto" onSubmit={updateGastoRenta} method="post">
+            <label className="label-concepto">Fecha y Lugar  </label>
+            <input className="input-concepto" type="text" id="fecha" onChange={(e) => setConcepto(e.target.value)} />
+            <label className="label-cantidad">  Cantidad  </label>
+            <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setRenta(e.target.value)} required />
+
+            <input className="gasto-submit" type="submit" value="Guardar" />
           </form>
-        </div >
-        <h2 className="mes-header">{mes}</h2>
-        <p className="text-ingresos">Ingresos : {ingresos} </p>
-        <p className="text-gastos">Gastos   : {total}</p>
-        <p className="estado-mes">{estadoMes()}</p>
-        <form className="form-ingresos" onSubmit={handleIngresosSubmit} method="post">
-          <label className="label-ingresos">Ingresos Totales Mes  </label>
-          <input className="input-ingresos" type="number" id="ingresos" value={ingresos} onChange={(e) => setIngresos(e.target.value)} />
-          <input className="submit-ingresos" type="submit" value="Click Enviar Ingresos" />
-        </form>
-      </div >
+        </div>
+        <p>{gastos.renta}</p>
+        <p>{state}</p>
 
 
-
-
+      </div>
     </div>
   )
 }
