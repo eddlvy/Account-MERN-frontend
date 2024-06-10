@@ -8,7 +8,8 @@ function PlanPage() {
   return (
     <div>
       <NavComponent></NavComponent>
-      {plan.renta}
+
+      <p>{plan.renta}</p>
     </div>
   )
 }

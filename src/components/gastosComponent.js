@@ -33,6 +33,7 @@ function GastosComponent() {
   const [saludSum, setSaludSum] = useState(0)
   const [otrosSum, setOtrosSum] = useState(0)
   const { total, setTotal } = useContext(Context)
+  const { plan } = useContext(Context)
   const headers = {
     headers: {
       "Authorization": `Bearer ${token}`
@@ -192,8 +193,8 @@ function GastosComponent() {
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setRenta(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
-        <p className="plan">Plan</p>
-        {!gastos.renta ? <p className="real">0</p> : <p className="real">{gastos.renta}</p>}
+        <p className="plan">PLAN: {plan.renta}</p>
+        {!gastos.renta ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.renta}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Gasolina</p>
@@ -204,8 +205,8 @@ function GastosComponent() {
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setGasolina(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
-        <p className="plan">Plan</p>
-        {!gastos.gasolina ? <p className="real">0</p> : <p className="real">{gasolinaSum}</p>}
+        <p className="plan">PLAN: {plan.gasolina}</p>
+        {!gastos.gasolina ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gasolinaSum}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Deuda Hapoalim</p>
@@ -214,8 +215,8 @@ function GastosComponent() {
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setDeuda(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
-        <p className="plan">Plan</p>
-        {!gastos.deuda ? <p className="real">0</p> : <p className="real">{gastos.deuda}</p>}
+        <p className="plan">PLAN: {plan.deuda}</p>
+        {!gastos.deuda ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.deuda}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Comida</p>
@@ -226,8 +227,8 @@ function GastosComponent() {
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setComida(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
-        <p className="plan">Plan</p>
-        {!gastos.comida ? <p className="real">0</p> : <p className="real">{comidaSum}</p>}
+        <p className="plan">PLAN: {plan.comida}</p>
+        {!gastos.comida ? <p className="real">REAL: 0</p> : <p className="real">REAL: {comidaSum}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Cuba Envio Dinero</p>
@@ -236,8 +237,8 @@ function GastosComponent() {
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setCuba(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
-        <p className="plan">Plan</p>
-        {!gastos.cuba ? <p className="real">0</p> : <p className="real">{gastos.cuba}</p>}
+        <p className="plan">PLAN: {plan.cuba}</p>
+        {!gastos.cuba ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.cuba}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Electricidad</p>
@@ -246,8 +247,8 @@ function GastosComponent() {
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setElec(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
-        <p className="plan">Plan</p>
-        {!gastos.electricidad ? <p className="real">0</p> : <p className="real">{gastos.electricidad}</p>}
+        <p className="plan">PLAN: {plan.electricidad}</p>
+        {!gastos.electricidad ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.electricidad}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Agua</p>
@@ -256,8 +257,8 @@ function GastosComponent() {
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setAgua(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
-        <p className="plan">Plan</p>
-        {!gastos.agua ? <p className="real">0</p> : <p className="real">{gastos.agua}</p>}
+        <p className="plan">PLAN: {plan.agua}</p>
+        {!gastos.agua ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.agua}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Gas</p>
@@ -266,8 +267,8 @@ function GastosComponent() {
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setGas(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
-        <p className="plan">Plan</p>
-        {!gastos.gas ? <p className="real">0</p> : <p className="real">{gastos.gas}</p>}
+        <p className="plan">PLAN: {plan.gas}</p>
+        {!gastos.gas ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.gas}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Arnona</p>
@@ -276,8 +277,8 @@ function GastosComponent() {
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setArnona(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
-        <p className="plan">Plan</p>
-        {!gastos.arnona ? <p className="real">0</p> : <p className="real">{gastos.arnona}</p>}
+        <p className="plan">PLAN: {plan.arnona}</p>
+        {!gastos.arnona ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.arnona}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Hot</p>
@@ -286,8 +287,8 @@ function GastosComponent() {
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setHot(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
-        <p className="plan">Plan</p>
-        {!gastos.hot ? <p className="real">0</p> : <p className="real">{gastos.hot}</p>}
+        <p className="plan">PLAN: {plan.hot}</p>
+        {!gastos.hot ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.hot}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Internet</p>
@@ -296,8 +297,8 @@ function GastosComponent() {
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setInternet(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
-        <p className="plan">Plan</p>
-        {!gastos.internet ? <p className="real">0</p> : <p className="real">{gastos.internet}</p>}
+        <p className="plan">PLAN: {plan.internet}</p>
+        {!gastos.internet ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.internet}</p>}
       </div>
 
       <div className="gasto">
@@ -307,8 +308,8 @@ function GastosComponent() {
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setBl(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
-        <p className="plan">Plan</p>
-        {!gastos.bl ? <p className="real">0</p> : <p className="real">{gastos.bl}</p>}
+        <p className="plan">PLAN: {plan.bl}</p>
+        {!gastos.bl ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.bl}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Pago Tarjetas</p>
@@ -319,8 +320,8 @@ function GastosComponent() {
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setTarjetas(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
-        <p className="plan">Plan</p>
-        {!gastos.comida ? <p className="real">0</p> : <p className="real">{tarjetasSum}</p>}
+        <p className="plan">PLAN: {plan.tarjetas}</p>
+        {!gastos.comida ? <p className="real">REAL: 0</p> : <p className="real">REAL: {tarjetasSum}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Medicinas y Salud</p>
@@ -331,8 +332,8 @@ function GastosComponent() {
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setSalud(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
-        <p className="plan">Plan</p>
-        {!gastos.salud ? <p className="real">0</p> : <p className="real">{saludSum}</p>}
+        <p className="plan">PLAN: {plan.salud}</p>
+        {!gastos.salud ? <p className="real">REAL: 0</p> : <p className="real">REAL: {saludSum}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Otros</p>
@@ -343,8 +344,8 @@ function GastosComponent() {
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setOtros(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
-        <p className="plan">Plan</p>
-        {!gastos.otros ? <p className="real">0</p> : <p className="real">{otrosSum}</p>}
+        <p className="plan">PLAN: {plan.otros}</p>
+        {!gastos.otros ? <p className="real">REAL: 0</p> : <p className="real">REAL: {otrosSum}</p>}
       </div>
 
 

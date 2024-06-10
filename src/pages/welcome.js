@@ -28,16 +28,14 @@ function WelcomePage() {
   // ingresos context
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/ingresos/${mes}`).then(res => setIngresos(res.data.total)).catch(error => { setIngresos(error) })
+    axios.get(`http://localhost:5000/ingresos/${mes}`).then(res => setIngresos(res.data.total)).catch(error => { console.log(error) })
   });
+
 
   // Plan context
   useEffect(() => {
-    axios.get(`http://localhost:5000/plan`).then(res => setPlan(res.data[0])).catch(error => console.log(error))
+    axios.get(`http://localhost:5000/plan`).then(res => setPlan(res.data[0])).catch(error => console.log(error), [])
   });
-
-
-
 
   return (
 

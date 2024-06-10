@@ -8,6 +8,7 @@ import "./style/home.css";
 
 function HomePage() {
 
+
   return (
     <div className="container-main">
       <NavComponent></NavComponent>
