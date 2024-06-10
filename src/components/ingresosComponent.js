@@ -33,7 +33,7 @@ function IngresosComponent() {
         <input className="submit-ingresos" type="submit" value="Click Enviar Ingresos" />
       </form>
       <p>{state}</p>
-      <h2>{ingresos}</h2>
+      <h3>Ingresos Mes: {ingresos}</h3>
     </div>)
 
 }
