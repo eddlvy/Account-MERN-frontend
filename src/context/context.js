@@ -6,7 +6,7 @@ export const ContextProvider = ({ children }) => {
   const [mes, setMes] = useState([]);
   const [token, setToken] = useState(null);
   const [ingresos, setIngresos] = useState(0);
-  // const [total, setTotal] = useState(0)
+  const [total, setTotal] = useState(0)
   // const [renta, setRenta] = useState(0)
   // const [deuda, setDeuda] = useState(0)
   // const [cuba, setCuba] = useState(0)
@@ -30,6 +30,6 @@ export const ContextProvider = ({ children }) => {
 
 
   return (
-    <Context.Provider value={{ logged, setLogged, mes, setMes, token, setToken, ingresos, setIngresos }}>{children}</Context.Provider>
+    <Context.Provider value={{ logged, setLogged, mes, setMes, token, setToken, ingresos, setIngresos, total, setTotal }}>{children}</Context.Provider>
   )
 }
