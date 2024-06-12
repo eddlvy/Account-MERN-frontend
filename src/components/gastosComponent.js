@@ -174,13 +174,22 @@ function GastosComponent() {
     let sum = ingresos - total;
     if (sum >= 0) {
 
-      return <span className="superavit">Superavit {sum}</span>
+      return <span className="superavit" style={{ "backgroundColor": "#20c997" }}>Superavit {sum}</span>
     } else if (sum <= 0) {
-      return <span className="deficit">Deficit {sum}</span>
+      return <span className="deficit" style={{ "backgroundColor": "#ff6b6b" }}>Deficit {sum}</span>
     } else {
       return <span className="nan">0</span>
     }
   }
+  // function analizar estado gastos
+  // function estadoGastoIndividual(gastoPLan, gastoReal) {
+  //   const resultado = plan.gastoPLan - gastos.gastoReal;
+  //   if (plan.gastoPLan > gastos.gastoReal) {
+  //     <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{resultado}</p>
+  //   } else {
+  //     <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{resultado}</p>
+  //   }
+  // }
   return (
     <div className="container-gastos">
       {!total ? <h3>Gastos Mes:  0</h3> : <h3>Gastos Mes: {total}</h3>}
@@ -195,6 +204,9 @@ function GastosComponent() {
         </form>
         <p className="plan">PLAN: {plan.renta}</p>
         {!gastos.renta ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.renta}</p>}
+        {plan.renta >= gastos.real ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.renta - gastos.renta}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.renta - gastos.renta}</p>}
+
+
       </div>
       <div className="gasto">
         <p className="gasto-text">Gasolina</p>
@@ -207,6 +219,7 @@ function GastosComponent() {
         </form>
         <p className="plan">PLAN: {plan.gasolina}</p>
         {!gastos.gasolina ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gasolinaSum}</p>}
+        {plan.gasolina >= gasolinaSum ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.renta - gasolinaSum}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.gasolina - gasolinaSum}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Deuda Hapoalim</p>
@@ -217,6 +230,7 @@ function GastosComponent() {
         </form>
         <p className="plan">PLAN: {plan.deuda}</p>
         {!gastos.deuda ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.deuda}</p>}
+        {plan.deuda >= gastos.deuda ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.deuda - gastos.deuda}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.deuda - gastos.deuda}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Comida</p>
@@ -229,6 +243,7 @@ function GastosComponent() {
         </form>
         <p className="plan">PLAN: {plan.comida}</p>
         {!gastos.comida ? <p className="real">REAL: 0</p> : <p className="real">REAL: {comidaSum}</p>}
+        {plan.comida >= comidaSum ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.comida - comidaSum}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.comida - comidaSum}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Cuba Envio Dinero</p>
@@ -239,6 +254,7 @@ function GastosComponent() {
         </form>
         <p className="plan">PLAN: {plan.cuba}</p>
         {!gastos.cuba ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.cuba}</p>}
+        {plan.cuba >= gastos.cuba ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.cuba - gastos.cuba}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.cuba - gastos.cuba}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Electricidad</p>
@@ -249,6 +265,7 @@ function GastosComponent() {
         </form>
         <p className="plan">PLAN: {plan.electricidad}</p>
         {!gastos.electricidad ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.electricidad}</p>}
+        {plan.electricidad >= gastos.electricidad ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.electricidad - gastos.electricidad}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.electricidad - gastos.electricidad}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Agua</p>
@@ -259,6 +276,7 @@ function GastosComponent() {
         </form>
         <p className="plan">PLAN: {plan.agua}</p>
         {!gastos.agua ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.agua}</p>}
+        {plan.agua >= gastos.agua ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.agua - gastos.agua}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.agua - gastos.agua}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Gas</p>
@@ -269,6 +287,7 @@ function GastosComponent() {
         </form>
         <p className="plan">PLAN: {plan.gas}</p>
         {!gastos.gas ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.gas}</p>}
+        {plan.gas >= gastos.gas ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.gas - gastos.gas}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.gas - gastos.gas}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Arnona</p>
@@ -279,6 +298,7 @@ function GastosComponent() {
         </form>
         <p className="plan">PLAN: {plan.arnona}</p>
         {!gastos.arnona ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.arnona}</p>}
+        {plan.arnona >= gastos.arnona ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.arnona - gastos.arnona}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.arnona - gastos.arnona}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Hot</p>
@@ -289,6 +309,7 @@ function GastosComponent() {
         </form>
         <p className="plan">PLAN: {plan.hot}</p>
         {!gastos.hot ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.hot}</p>}
+        {plan.hot >= gastos.hot ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.hot - gastos.hot}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.hot - gastos.hot}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Internet</p>
@@ -299,6 +320,7 @@ function GastosComponent() {
         </form>
         <p className="plan">PLAN: {plan.internet}</p>
         {!gastos.internet ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.internet}</p>}
+        {plan.internet >= gastos.internet ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.internet - gastos.internet}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.internet - gastos.internet}</p>}
       </div>
 
       <div className="gasto">
@@ -310,6 +332,7 @@ function GastosComponent() {
         </form>
         <p className="plan">PLAN: {plan.bl}</p>
         {!gastos.bl ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.bl}</p>}
+        {plan.bl >= gastos.bl ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.bl - gastos.bl}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.bl - gastos.bl}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Pago Tarjetas</p>
@@ -322,6 +345,7 @@ function GastosComponent() {
         </form>
         <p className="plan">PLAN: {plan.tarjetas}</p>
         {!gastos.comida ? <p className="real">REAL: 0</p> : <p className="real">REAL: {tarjetasSum}</p>}
+        {plan.tarjetas >= tarjetasSum ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.tarjetas - tarjetasSum}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.tarjetas - tarjetasSum}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Medicinas y Salud</p>
@@ -334,6 +358,7 @@ function GastosComponent() {
         </form>
         <p className="plan">PLAN: {plan.salud}</p>
         {!gastos.salud ? <p className="real">REAL: 0</p> : <p className="real">REAL: {saludSum}</p>}
+        {plan.salud >= saludSum ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.salud - saludSum}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.salud - saludSum}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Otros</p>
@@ -346,6 +371,7 @@ function GastosComponent() {
         </form>
         <p className="plan">PLAN: {plan.otros}</p>
         {!gastos.otros ? <p className="real">REAL: 0</p> : <p className="real">REAL: {otrosSum}</p>}
+        {plan.otros >= otrosSum ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.otros - otrosSum}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.otros - otrosSum}</p>}
       </div>
 
 
