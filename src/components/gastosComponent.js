@@ -41,6 +41,7 @@ function GastosComponent() {
   };
   // rerender handler effect
   useEffect(() => {
+
     setGasolinaSum(gastos.gasolina?.reduce((acc, curr) => acc + curr, 0) ?? 0)
     setComidaSum(gastos.comida?.reduce((acc, curr) => acc + curr, 0) ?? 0)
     setTarjetasSum(gastos.tarjetas?.reduce((acc, curr) => acc + curr, 0) ?? 0)
