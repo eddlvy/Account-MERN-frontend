@@ -6,7 +6,7 @@ import axios from "axios";
 
 function PlanPage() {
   const { token } = useContext(Context);
-  const { plan, setPlan } = useContext(Context);
+  const { setPlan } = useContext(Context);
   const [state, setState] = useState("")
   const [renta, setRenta] = useState(0)
   const [deuda, setDeuda] = useState(0)
@@ -167,127 +167,127 @@ function PlanPage() {
         <p>{state}</p>
       </div>
       <div className="container-gasto">
-        <p className="gasto-text">Renta</p>
-        <form className="form-plan" onSubmit={updateRenta} method="post">
+        <p className="gasto-text">Gasolina</p>
+        <form className="form-plan" onSubmit={updateGasolina} method="post">
           <label className="label-cantidad">  Cantidad  </label>
-          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setRenta(e.target.value)} required />
+          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setGasolina(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
         <p>{state}</p>
       </div>
       <div className="container-gasto">
-        <p className="gasto-text">Renta</p>
-        <form className="form-plan" onSubmit={updateRenta} method="post">
+        <p className="gasto-text">Deuda Hapoalim</p>
+        <form className="form-plan" onSubmit={updateDeuda} method="post">
           <label className="label-cantidad">  Cantidad  </label>
-          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setRenta(e.target.value)} required />
+          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setDeuda(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
         <p>{state}</p>
       </div>
       <div className="container-gasto">
-        <p className="gasto-text">Renta</p>
-        <form className="form-plan" onSubmit={updateRenta} method="post">
+        <p className="gasto-text">Comida</p>
+        <form className="form-plan" onSubmit={updateComida} method="post">
           <label className="label-cantidad">  Cantidad  </label>
-          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setRenta(e.target.value)} required />
+          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setComida(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
         <p>{state}</p>
       </div>
       <div className="container-gasto">
-        <p className="gasto-text">Renta</p>
-        <form className="form-plan" onSubmit={updateRenta} method="post">
+        <p className="gasto-text">Envio Cuba</p>
+        <form className="form-plan" onSubmit={updateCuba} method="post">
           <label className="label-cantidad">  Cantidad  </label>
-          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setRenta(e.target.value)} required />
+          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setCuba(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
         <p>{state}</p>
       </div>
       <div className="container-gasto">
-        <p className="gasto-text">Renta</p>
-        <form className="form-plan" onSubmit={updateRenta} method="post">
+        <p className="gasto-text">Electricidad</p>
+        <form className="form-plan" onSubmit={updateElectricidad} method="post">
           <label className="label-cantidad">  Cantidad  </label>
-          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setRenta(e.target.value)} required />
+          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setElec(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
         <p>{state}</p>
       </div>
       <div className="container-gasto">
-        <p className="gasto-text">Renta</p>
-        <form className="form-plan" onSubmit={updateRenta} method="post">
+        <p className="gasto-text">Agua</p>
+        <form className="form-plan" onSubmit={updateAgua} method="post">
           <label className="label-cantidad">  Cantidad  </label>
-          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setRenta(e.target.value)} required />
+          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setAgua(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
         <p>{state}</p>
       </div>
       <div className="container-gasto">
-        <p className="gasto-text">Renta</p>
-        <form className="form-plan" onSubmit={updateRenta} method="post">
+        <p className="gasto-text">Gas</p>
+        <form className="form-plan" onSubmit={updateGas} method="post">
           <label className="label-cantidad">  Cantidad  </label>
-          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setRenta(e.target.value)} required />
+          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setGas(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
         <p>{state}</p>
       </div>
       <div className="container-gasto">
-        <p className="gasto-text">Renta</p>
-        <form className="form-plan" onSubmit={updateRenta} method="post">
+        <p className="gasto-text">Arnona</p>
+        <form className="form-plan" onSubmit={updateArnona} method="post">
           <label className="label-cantidad">  Cantidad  </label>
-          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setRenta(e.target.value)} required />
+          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setArnona(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
         <p>{state}</p>
       </div>
       <div className="container-gasto">
-        <p className="gasto-text">Renta</p>
-        <form className="form-plan" onSubmit={updateRenta} method="post">
+        <p className="gasto-text">Hot</p>
+        <form className="form-plan" onSubmit={updateHot} method="post">
           <label className="label-cantidad">  Cantidad  </label>
-          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setRenta(e.target.value)} required />
+          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setHot(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
         <p>{state}</p>
       </div>
       <div className="container-gasto">
-        <p className="gasto-text">Renta</p>
-        <form className="form-plan" onSubmit={updateRenta} method="post">
+        <p className="gasto-text">Internet</p>
+        <form className="form-plan" onSubmit={updateInternet} method="post">
           <label className="label-cantidad">  Cantidad  </label>
-          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setRenta(e.target.value)} required />
+          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setInternet(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
         <p>{state}</p>
       </div>
       <div className="container-gasto">
-        <p className="gasto-text">Renta</p>
-        <form className="form-plan" onSubmit={updateRenta} method="post">
+        <p className="gasto-text">Bituaj Leumi</p>
+        <form className="form-plan" onSubmit={updateBl} method="post">
           <label className="label-cantidad">  Cantidad  </label>
-          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setRenta(e.target.value)} required />
+          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setBl(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
         <p>{state}</p>
       </div>
       <div className="container-gasto">
-        <p className="gasto-text">Renta</p>
-        <form className="form-plan" onSubmit={updateRenta} method="post">
+        <p className="gasto-text">Medicinas y Salud</p>
+        <form className="form-plan" onSubmit={updateSalud} method="post">
           <label className="label-cantidad">  Cantidad  </label>
-          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setRenta(e.target.value)} required />
+          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setSalud(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
         <p>{state}</p>
       </div>
       <div className="container-gasto">
-        <p className="gasto-text">Renta</p>
-        <form className="form-plan" onSubmit={updateRenta} method="post">
+        <p className="gasto-text">Tarjetas</p>
+        <form className="form-plan" onSubmit={updateTarjetas} method="post">
           <label className="label-cantidad">  Cantidad  </label>
-          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setRenta(e.target.value)} required />
+          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setTarjetas(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
         <p>{state}</p>
       </div>
       <div className="container-gasto">
-        <p className="gasto-text">Renta</p>
-        <form className="form-plan" onSubmit={updateRenta} method="post">
+        <p className="gasto-text">Otros</p>
+        <form className="form-plan" onSubmit={updateOtros} method="post">
           <label className="label-cantidad">  Cantidad  </label>
-          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setRenta(e.target.value)} required />
+          <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setOtros(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
         <p>{state}</p>
