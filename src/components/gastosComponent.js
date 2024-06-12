@@ -33,12 +33,17 @@ function GastosComponent() {
   const [saludSum, setSaludSum] = useState(0)
   const [otrosSum, setOtrosSum] = useState(0)
   const { total, setTotal } = useContext(Context)
-  const { plan } = useContext(Context)
+  const { plan, setPlan } = useContext(Context)
   const headers = {
     headers: {
       "Authorization": `Bearer ${token}`
     }
   };
+
+  // Plan context
+  useEffect(() => {
+    axios.get('http://localhost:5000/plan').then(res => setPlan(res.data[0])).catch(error => console.log(error), [plan, setPlan])
+  });
   // rerender handler effect
   useEffect(() => {
 
@@ -48,7 +53,9 @@ function GastosComponent() {
     setSaludSum(gastos.salud?.reduce((acc, curr) => acc + curr, 0) ?? 0)
     setOtrosSum(gastos.otros?.reduce((acc, curr) => acc + curr, 0) ?? 0)
     setTotal(gastos.renta + gasolinaSum + gastos.deuda + comidaSum + gastos.cuba + gastos.electricidad + gastos.agua + gastos.gas + gastos.arnona + gastos.hot + gastos.internet + gastos.bl + tarjetasSum + saludSum + otrosSum)
-  }, [setTotal, gastos.renta, gasolinaSum, gastos.gasolina, gastos.deuda, comidaSum, gastos.comida, gastos.cuba, gastos.electricidad, gastos.agua, gastos.gas, gastos.arnona, gastos.hot, gastos.internet, gastos.bl, tarjetasSum, saludSum, otrosSum, gastos.tarjetas, gastos.salud, gastos.otros])
+  }, [setTotal, gastos.renta, gasolinaSum, gastos.gasolina, gastos.deuda, comidaSum, gastos.comida, gastos.cuba, gastos.electricidad, gastos.agua, gastos.gas, gastos.arnona, gastos.hot, gastos.internet, gastos.bl, tarjetasSum, saludSum, otrosSum, gastos.tarjetas, gastos.salud, gastos.otros, plan, setPlan])
+
+
 
   // gastos del mes get DB
   useEffect(() => {
@@ -205,7 +212,7 @@ function GastosComponent() {
         </form>
         <p className="plan">PLAN: {plan.renta}</p>
         {!gastos.renta ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gastos.renta}</p>}
-        {plan.renta >= gastos.real ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.renta - gastos.renta}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.renta - gastos.renta}</p>}
+        {plan.renta >= gastos.renta ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.renta - gastos.renta}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.renta - gastos.renta}</p>}
 
 
       </div>
@@ -220,7 +227,7 @@ function GastosComponent() {
         </form>
         <p className="plan">PLAN: {plan.gasolina}</p>
         {!gastos.gasolina ? <p className="real">REAL: 0</p> : <p className="real">REAL: {gasolinaSum}</p>}
-        {plan.gasolina >= gasolinaSum ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.renta - gasolinaSum}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.gasolina - gasolinaSum}</p>}
+        {plan.gasolina >= gasolinaSum ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.gasolina - gasolinaSum}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.gasolina - gasolinaSum}</p>}
       </div>
       <div className="gasto">
         <p className="gasto-text">Deuda Hapoalim</p>

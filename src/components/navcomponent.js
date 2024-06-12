@@ -22,10 +22,7 @@ function NavComponent() {
       } to="/user/plan">Plan</NavLink>
       <NavLink className={({ isActive, isPending }) =>
         isPending ? "pending" : isActive ? "active" : ""
-      } to="/user/tarjetas">Resumen de Tarjetas</NavLink>
-      <NavLink className={({ isActive, isPending }) =>
-        isPending ? "pending" : isActive ? "active" : ""
-      } to="/user/historia">Historia de Transacciones</NavLink>
+      } to="/user/historia">Historial de Transacciones</NavLink>
       <NavLink className={({ isActive, isPending }) =>
         isPending ? "pending" : isActive ? "active" : ""
       } to="/" onClick={handleSalir}>Salir</NavLink>

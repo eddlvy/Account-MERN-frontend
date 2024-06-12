@@ -6,6 +6,7 @@ import MesComponent from "../components/mesComponent";
 import GastosComponent from "../components/gastosComponent";
 import "./style/home.css";
 
+
 function HomePage() {
 
 

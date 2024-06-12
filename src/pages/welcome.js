@@ -12,7 +12,7 @@ function WelcomePage() {
 
   const { mes, setMes } = useContext(Context);
   const { setIngresos } = useContext(Context);
-  const { setPlan } = useContext(Context)
+  const { plan, setPlan } = useContext(Context)
 
 
   // mes context
@@ -32,9 +32,9 @@ function WelcomePage() {
   });
 
 
-  // Plan context
+  // // Plan context
   useEffect(() => {
-    axios.get(`http://localhost:5000/plan`).then(res => setPlan(res.data[0])).catch(error => console.log(error), [])
+    axios.get(`http://localhost:5000/plan`).then(res => setPlan(res.data[0])).catch(error => console.log(error), [plan, setPlan])
   });
 
   return (
