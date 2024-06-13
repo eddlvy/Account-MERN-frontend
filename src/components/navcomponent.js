@@ -13,13 +13,13 @@ function NavComponent() {
     <div className="nav-container">
       <NavLink className={({ isActive, isPending }) =>
         isPending ? "pending" : isActive ? "active" : ""
-      } to="/user/home">Home</NavLink>
+      } to="/user/home">Inicio</NavLink>
       <NavLink className={({ isActive, isPending }) =>
         isPending ? "pending" : isActive ? "active" : ""
-      } to="/user/gastos">Gastos del Mes</NavLink>
+      } to="/user/gastos">Historial Gastos del Mes</NavLink>
       <NavLink className={({ isActive, isPending }) =>
         isPending ? "pending" : isActive ? "active" : ""
-      } to="/user/plan">Plan</NavLink>
+      } to="/user/plan">Cambiar Plan</NavLink>
       <NavLink className={({ isActive, isPending }) =>
         isPending ? "pending" : isActive ? "active" : ""
       } to="/user/historia">Historial de Transacciones</NavLink>
