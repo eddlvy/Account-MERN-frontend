@@ -62,7 +62,7 @@ function GastosComponent() {
   useEffect(() => {
     axios.get(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosget/${mes}`, headers)
       .then(res => setGastos(res.data)).catch(error => console.log("No hay Datos del mes en curso"))
-  }, [headers, mes]);
+  }, [gastos, headers, mes]);
 
   // gasto update handlers
 
