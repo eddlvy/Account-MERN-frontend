@@ -9,9 +9,9 @@ function IngresosComponent() {
   const [state, setState] = useState("")
   const { ingresos, setIngresos } = useContext(Context);
   const { token } = useContext(Context);
-  const [mesState, setMes] = useState("");
+  const [mesState, setMesAc] = useState("");
   const [ingresosAc, setIngresosAc] = useState(0);
-  const { mes } = useContext(Context);
+  const { mes, setMes } = useContext(Context);
   const headers = {
     headers: {
       "Authorization": `Bearer ${token}`
@@ -26,7 +26,7 @@ function IngresosComponent() {
       mes: mesState
     }
     axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/user/home/mes', data, headers).then(res => setState("Mes Cambiado")).catch(error => setState(`Error Posting , ${error}`))
-
+    setMes(mesState)
   };
 
   function handleIngresosSubmit(e) {
@@ -47,7 +47,7 @@ function IngresosComponent() {
         <div className="select-mes">
           <form className="form-mes" onSubmit={handleSelectMes} method="post">
             <label className="label-mes">Para Iniciar Nuevo Mes, Escribe mes  </label>
-            <input className="mes-input" type="text" id="mes" onChange={(e) => setMes(e.target.value)} />
+            <input className="mes-input" type="text" id="mes" onChange={(e) => setMesAc(e.target.value)} />
             <input className="mes-submit" type="submit" value="Click para iniciar Mes" />
             <p className="state">{state}</p>
           </form>
