@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import NavComponent from "../components/navcomponent";
 import axios from "axios";
 import { Context } from "../context/context";
+import './style/mes.css';
 
 
 function GastosPage() {

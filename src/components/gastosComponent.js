@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../context/context";
 import axios from "axios";
+import './style/gastoscomponent.css';
 
 
 
@@ -192,8 +193,9 @@ function GastosComponent() {
 
   return (
     <div className="container-gastos">
-      {!total ? <h3>Gastos Mes:  0</h3> : <h3>Gastos Mes: {total}</h3>}
-      <h3>Estado Mes:  {estadoMes()}</h3>
+      <div className="gastos-resumen">{!total ? <h3>Gastos Mes:  0</h3> : <h3>Gastos Mes: {total}</h3>}
+        <h3>Estado Mes:  {estadoMes()}</h3></div>
+
       <div className="gasto">
         <p className="gasto-text">Renta</p>
         <form className="form-gasto" onSubmit={updateGastoRenta} method="post">
@@ -210,7 +212,7 @@ function GastosComponent() {
       <div className="gasto">
         <p className="gasto-text">Gasolina</p>
         <form className="form-gasto" onSubmit={updateGastoGasolina} method="post">
-          <label className="label-concepto">Fecha y Lugar  </label>
+          <label className="label-concepto">Lugar</label>
           <input className="input-concepto" type="text" id="fecha" onChange={(e) => setConcepto(e.target.value)} />
           <label className="label-cantidad">  Cantidad  </label>
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setGasolina(e.target.value)} required />
@@ -234,7 +236,7 @@ function GastosComponent() {
       <div className="gasto">
         <p className="gasto-text">Comida</p>
         <form className="form-gasto" onSubmit={updateGastoComida} method="post">
-          <label className="label-concepto">Fecha y Lugar  </label>
+          <label className="label-concepto">Lugar</label>
           <input className="input-concepto" type="text" id="fecha" onChange={(e) => setConcepto(e.target.value)} />
           <label className="label-cantidad">  Cantidad  </label>
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setComida(e.target.value)} required />
@@ -334,11 +336,11 @@ function GastosComponent() {
         {plan.bl >= gastos.bl || !gastos.bl ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.bl - gastos.bl || plan.bl}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.bl - gastos.bl}</p>}
       </div>
       <div className="gasto">
-        <p className="gasto-text">Pago Tarjetas</p>
+        <p className="gasto-text">Tarjetas</p>
         <form className="form-gasto" onSubmit={updateGastoTarjetas} method="post">
-          <label className="label-concepto">Fecha y Lugar  </label>
+          <label className="label-concepto">Tarjeta</label>
           <input className="input-concepto" type="text" id="fecha" onChange={(e) => setConcepto(e.target.value)} />
-          <label className="label-cantidad">  Cantidad  </label>
+          <label className="label-cantidad">Cantidad</label>
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setTarjetas(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
@@ -347,11 +349,11 @@ function GastosComponent() {
         {plan.tarjetas >= tarjetasSum ? <p className="resultado" style={{ "backgroundColor": "#20c997" }}>{plan.tarjetas - tarjetasSum}</p> : <p className="resultado" style={{ "backgroundColor": "#fa5252" }}>{plan.tarjetas - tarjetasSum}</p>}
       </div>
       <div className="gasto">
-        <p className="gasto-text">Medicinas y Salud</p>
+        <p className="gasto-text">Salud</p>
         <form className="form-gasto" onSubmit={updateGastoSalud} method="post">
-          <label className="label-concepto">Fecha y Lugar  </label>
+          <label className="label-concepto">Lugar</label>
           <input className="input-concepto" type="text" id="fecha" onChange={(e) => setConcepto(e.target.value)} />
-          <label className="label-cantidad">  Cantidad  </label>
+          <label className="label-cantidad">Cantidad</label>
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setSalud(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>
@@ -362,9 +364,9 @@ function GastosComponent() {
       <div className="gasto">
         <p className="gasto-text">Otros</p>
         <form className="form-gasto" onSubmit={updateGastoOtros} method="post">
-          <label className="label-concepto">Fecha y Lugar  </label>
+          <label className="label-concepto">Lugar</label>
           <input className="input-concepto" type="text" id="fecha" onChange={(e) => setConcepto(e.target.value)} />
-          <label className="label-cantidad">  Cantidad  </label>
+          <label className="label-cantidad">Cantidad</label>
           <input className="input-cantidad" type="number" id="cantidad" onChange={(e) => setOtros(e.target.value)} required />
           <input className="gasto-submit" type="submit" value="Guardar" />
         </form>

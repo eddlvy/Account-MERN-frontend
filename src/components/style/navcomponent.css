@@ -9,9 +9,9 @@
 .nav-container a {
   display: block;
   color: #495057;
-  font-size: 1.6em;
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-size: 1.8em;
+  font-weight: 800;
+  letter-spacing: 1px;
   text-decoration: none;
   transition: all 0.2s;
 }

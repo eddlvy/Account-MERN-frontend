@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Context } from "../context/context";
 import NavComponent from "../components/navcomponent";
 import axios from "axios";
-
+import './style/plan.css';
 
 function PlanPage() {
   const { token } = useContext(Context);

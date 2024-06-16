@@ -1,0 +1,112 @@
+.gastos-resumen {
+  padding-left: 2em;
+  padding-top: 0;
+  transform: translateY(-1.5em);
+}
+
+.superavit {
+  padding: 0.3em 1em;
+  border-radius: 3px;
+}
+
+.deficit {
+  padding: 0.3em 1em;
+  border-radius: 3px;
+}
+
+.nan {
+  padding: 0.3em 1em;
+  border-radius: 3px;
+}
+
+.gasto {
+  margin: 1em 1.5em;
+  padding: 1em 3em;
+  display: flex;
+  gap: 4em;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #66d9e8;
+  border-radius: 9px;
+}
+
+.gasto-text {
+  font-size: 1.4em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+.form-gasto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label-concepto {
+  font-size: 1.2em;
+  font-weight: 500;
+  font-style: italic;
+  padding-right: 0.5em;
+  transform: translateY(-0.15em);
+}
+
+.input-concepto {
+  font-size: 1.2em;
+  font-weight: 400;
+  padding: 0.2em;
+  border-radius: 5px;
+  background-color: #f1f3f5;
+
+}
+
+.label-cantidad {
+  font-size: 1.2em;
+  font-weight: 500;
+  font-style: italic;
+  padding-right: 0.5em;
+  padding-left: 1em;
+  transform: translateY(-0.15em);
+}
+
+.input-cantidad {
+  font-size: 1.2em;
+  font-weight: 400;
+  padding: 0.2em;
+  border-radius: 5px;
+  background-color: #f1f3f5;
+}
+
+.gasto-submit {
+  margin-left: 0.3em;
+  font-size: 1em;
+  font-weight: 400;
+  padding: 0.2em;
+  border-radius: 9px;
+  background-color: #d0ebff;
+  transition: all 0.3s;
+}
+
+.gasto-submit:hover {
+  cursor: pointer;
+  background-color: #228be6;
+}
+
+.plan {
+  font-size: 1.2em;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.real {
+  font-size: 1.2em;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.resultado {
+  font-size: 1.2em;
+  font-weight: 500;
+  font-style: italic;
+  padding: 0.3em 1em;
+  border-radius: 9px;
+}

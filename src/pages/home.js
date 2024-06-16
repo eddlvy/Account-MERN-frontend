@@ -2,9 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { Context } from "../context/context";
 import NavComponent from "../components/navcomponent";
 import IngresosComponent from "../components/ingresosComponent"
-// import MesComponent from "../components/mesComponent";
 import GastosComponent from "../components/gastosComponent";
-import "./style/home.css";
 import axios from "axios";
 
 
@@ -39,7 +37,6 @@ function HomePage() {
   return (
     <div className="container-main">
       <NavComponent></NavComponent>
-      {/* <MesComponent></MesComponent> */}
       <IngresosComponent></IngresosComponent>
       <GastosComponent></GastosComponent>
 

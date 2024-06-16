@@ -2,12 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import NavComponent from "../components/navcomponent";
 import axios from "axios";
 import { Context } from "../context/context";
+import './style/historia.css'
 
 
 function HistoriaPage() {
-  const [gastos, setGastos] = useState({
-    concepto: []
-  });
+  const [gastos, setGastos] = useState([]);
   const [setState] = useState("")
   const { token } = useContext(Context);
 
@@ -28,7 +27,7 @@ function HistoriaPage() {
     <div>
       <NavComponent></NavComponent>
       <ul className="list">
-        {elemArr.map(elem => <li className="list-item">Mes: {elem.mes} , Gastos del Mes:  {elem.concepto} </li>)}
+        {elemArr.map(elem => <li className="list-item">Mes: {elem.mes} <br></br> Gastos del Mes <ul className="inner-list">{elem.concepto.map((elem) => <li className="inner-list-item">{elem}</li>)}</ul>  </li>)}
       </ul>
     </div>
   )
