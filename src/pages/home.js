@@ -8,8 +8,9 @@ import axios from "axios";
 
 function HomePage() {
   const { mes, setMes } = useContext(Context);
-  const { setIngresos } = useContext(Context);
-  const { plan, setPlan } = useContext(Context)
+  const { ingresos, setIngresos } = useContext(Context);
+  const { plan, setPlan } = useContext(Context);
+
 
 
   // mes context
@@ -26,7 +27,7 @@ function HomePage() {
 
   useEffect(() => {
     axios.get(`https://account-app-2d28ea94e3bf.herokuapp.com/ingresos/${mes}`).then(res => setIngresos(res.data.total)).catch(error => { console.log(error) })
-  });
+  }, [ingresos, mes, setIngresos]);
 
 
   // // Plan context

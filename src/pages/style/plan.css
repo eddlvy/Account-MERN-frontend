@@ -1,3 +1,15 @@
 .container-gasto {
   padding: 1em;
 }
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 3em
+}
+
+.state {
+  font-size: 1em;
+  font-weight: 500;
+  font-style: italic;
+}
