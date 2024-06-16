@@ -35,7 +35,7 @@ function PlanPage() {
       renta: renta
     }
     e.preventDefault();
-    axios.post('http://localhost:5000/user/plan/renta', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
+    axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/user/plan/renta', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
     setPlan({ renta: renta, ...plan })
   }
   function updateDeuda(e) {
@@ -43,7 +43,7 @@ function PlanPage() {
       deuda: deuda
     }
     e.preventDefault();
-    axios.post('http://localhost:5000/user/plan/deuda', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
+    axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/user/plan/deuda', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
     setPlan({ deuda: deuda, ...plan })
   }
   function updateCuba(e) {
@@ -51,7 +51,7 @@ function PlanPage() {
       cuba: cuba
     }
     e.preventDefault();
-    axios.post('http://localhost:5000/user/plan/cuba', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
+    axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/user/plan/cuba', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
     setPlan({ cuba: cuba, ...plan })
   }
   function updateElectricidad(e) {
@@ -59,7 +59,7 @@ function PlanPage() {
       electricidad: electricidad
     }
     e.preventDefault();
-    axios.post('http://localhost:5000/user/plan/electricidad', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
+    axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/user/plan/electricidad', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
     setPlan({ electricidad: electricidad, ...plan })
   }
   function updateAgua(e) {
@@ -67,7 +67,7 @@ function PlanPage() {
       agua: agua
     }
     e.preventDefault();
-    axios.post('http://localhost:5000/user/plan/agua', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
+    axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/user/plan/agua', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
     setPlan({ agua: agua, ...plan })
   }
   function updateGas(e) {
@@ -75,7 +75,7 @@ function PlanPage() {
       gas: gas
     }
     e.preventDefault();
-    axios.post('http://localhost:5000/user/plan/gas', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
+    axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/user/plan/gas', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
     setPlan({ gas: gas, ...plan })
   }
   function updateArnona(e) {
@@ -83,7 +83,7 @@ function PlanPage() {
       arnona: arnona
     }
     e.preventDefault();
-    axios.post('http://localhost:5000/user/plan/arnona', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
+    axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/user/plan/arnona', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
     setPlan({ arnona: arnona, ...plan })
   }
   function updateHot(e) {
@@ -91,7 +91,7 @@ function PlanPage() {
       hot: hot
     }
     e.preventDefault();
-    axios.post('http://localhost:5000/user/plan/hot', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
+    axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/user/plan/hot', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
     setPlan({ hot: hot, ...plan })
   }
   function updateInternet(e) {
@@ -99,7 +99,7 @@ function PlanPage() {
       internet: internet
     }
     e.preventDefault();
-    axios.post('http://localhost:5000/user/plan/internet', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
+    axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/user/plan/internet', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
     setPlan({ internet: internet, ...plan })
   }
   function updateBl(e) {
@@ -107,7 +107,7 @@ function PlanPage() {
       bl: bl
     }
     e.preventDefault();
-    axios.post('http://localhost:5000/user/plan/bl', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
+    axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/user/plan/bl', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
     setPlan({ bl: bl, ...plan })
   }
   function updateGasolina(e) {
@@ -115,7 +115,7 @@ function PlanPage() {
       gasolina: gasolina
     }
     e.preventDefault();
-    axios.post('http://localhost:5000/user/plan/gasolina', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
+    axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/user/plan/gasolina', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
     setPlan({ gasolina: gasolina, ...plan })
   }
   function updateComida(e) {
@@ -123,7 +123,7 @@ function PlanPage() {
       comida: comida
     }
     e.preventDefault();
-    axios.post('http://localhost:5000/user/plan/comida', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
+    axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/user/plan/comida', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
     setPlan({ comida: comida, ...plan })
   }
   function updateTarjetas(e) {
@@ -131,7 +131,7 @@ function PlanPage() {
       tarjetas: tarjetas
     }
     e.preventDefault();
-    axios.post('http://localhost:5000/user/plan/tarjetas', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
+    axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/user/plan/tarjetas', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
     setPlan({ tarjetas: tarjetas, ...plan })
   }
   function updateSalud(e) {
@@ -139,7 +139,7 @@ function PlanPage() {
       salud: salud
     }
     e.preventDefault();
-    axios.post('http://localhost:5000/user/plan/salud', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
+    axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/user/plan/salud', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${error}`))
     setPlan({ salud: salud, ...plan })
   }
   function updateOtros(e) {
@@ -147,7 +147,7 @@ function PlanPage() {
       otros: otros
     }
     e.preventDefault();
-    axios.post('http://localhost:5000/user/plan/otros', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${console.log}`))
+    axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/user/plan/otros', data, headers).then(res => console.log(res.data)).catch(error => console.log(`Error , ${console.log}`))
     setPlan({ otros: otros, ...plan })
   }
 

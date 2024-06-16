@@ -17,7 +17,7 @@ function HistoriaPage() {
   };
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/user/historia`, headers).then(res => setGastos(res.data)).catch(error => console.log(error));
+    axios.get(`https://account-app-2d28ea94e3bf.herokuapp.com/user/historia`, headers).then(res => setGastos(res.data)).catch(error => console.log(error));
 
   })
   const dataArr = Object.values(gastos)

@@ -14,7 +14,7 @@ function HomePage() {
 
   // mes context
   useEffect(() => {
-    fetch("http://localhost:5000/mes").then(res => res.json()).then((data) => {
+    fetch("https://account-app-2d28ea94e3bf.herokuapp.com/mes").then(res => res.json()).then((data) => {
       setMes(data[0].mes)
     }, (error) => {
       console.log(error)
@@ -25,13 +25,13 @@ function HomePage() {
   // ingresos context
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/ingresos/${mes}`).then(res => setIngresos(res.data.total)).catch(error => { console.log(error) })
+    axios.get(`https://account-app-2d28ea94e3bf.herokuapp.com/ingresos/${mes}`).then(res => setIngresos(res.data.total)).catch(error => { console.log(error) })
   });
 
 
   // // Plan context
   useEffect(() => {
-    axios.get(`http://localhost:5000/plan`).then(res => setPlan(res.data[0])).catch(error => console.log(error), [plan, setPlan])
+    axios.get(`https://account-app-2d28ea94e3bf.herokuapp.com/plan`).then(res => setPlan(res.data[0])).catch(error => console.log(error), [plan, setPlan])
   });
 
   return (

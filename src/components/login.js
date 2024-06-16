@@ -22,7 +22,7 @@ function LoginComponent() {
 
 
     e.preventDefault();
-    axios.post('http://localhost:5000/login', dataToPost).then(res => setToken(res.data.token)).catch(error => { setState(`Email o Clave no Correcta, Intente de nuevo`) })
+    axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/login', dataToPost).then(res => setToken(res.data.token)).catch(error => { setState(`Email o Clave no Correcta, Intente de nuevo`) })
 
     if (token) {
       setLogged(true)

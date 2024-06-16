@@ -18,7 +18,7 @@ function GastosPage() {
   };
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/user/gastos/${mes}`, headers).then(res => setGastos(res.data.concepto || {})).catch(error => console.log(error));
+    axios.get(`https://account-app-2d28ea94e3bf.herokuapp.com/user/gastos/${mes}`, headers).then(res => setGastos(res.data.concepto || {})).catch(error => console.log(error));
 
   })
 

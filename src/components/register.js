@@ -14,7 +14,7 @@ function RegisterComponent() {
       clave: clave
     }
     e.preventDefault();
-    axios.post('http://localhost:5000/register', dataToPost).then(res => res.status === 201 ? setState("Usuario Creado") : setState("Usuario ya existe")).catch(error => { setState(`Error Creando Usuario, error ${error}`) })
+    axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/register', dataToPost).then(res => res.status === 201 ? setState("Usuario Creado") : setState("Usuario ya existe")).catch(error => { setState(`Error Creando Usuario, error ${error}`) })
   }
 
   return (

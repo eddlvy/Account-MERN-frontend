@@ -21,7 +21,7 @@ function IngresosComponent() {
     const data = {
       mes: mesState
     }
-    axios.post('http://localhost:5000/user/home/mes', data, headers).then(res => console.log("Mes Cambiado")).catch(error => console.log(`Error Posting , ${error}`))
+    axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/user/home/mes', data, headers).then(res => console.log("Mes Cambiado")).catch(error => console.log(`Error Posting , ${error}`))
 
   };
 
@@ -31,7 +31,7 @@ function IngresosComponent() {
       total: ingresos
     }
 
-    axios.post('http://localhost:5000/user/home/ingresos', dataToPost, headers).then(res => console.log(res.data)).catch(error => console.log(`Error Posting , ${error}`));
+    axios.post('https://account-app-2d28ea94e3bf.herokuapp.com/user/home/ingresos', dataToPost, headers).then(res => console.log(res.data)).catch(error => console.log(`Error Posting , ${error}`));
     e.preventDefault();
   };
 
