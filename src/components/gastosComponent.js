@@ -8,7 +8,6 @@ import './style/gastoscomponent.css';
 function GastosComponent() {
   const { mes } = useContext(Context);
   const { token } = useContext(Context);
-  const [state, setState] = useState("");
   const { ingresos } = useContext(Context);
   const [gastos, setGastos] = useState([])
 
@@ -61,8 +60,8 @@ function GastosComponent() {
   // gastos del mes get DB
   useEffect(() => {
     axios.get(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosget/${mes}`, headers)
-      .then(res => setGastos(res.data)).catch(error => setState("No hay Datos del mes en curso"))
-  }, [{ ...gastos }]);
+      .then(res => setGastos(res.data)).catch(error => console.log("No hay Datos del mes en curso"))
+  });
 
   // gasto update handlers
 
@@ -71,7 +70,7 @@ function GastosComponent() {
     const dataToPost = {
       renta: renta,
     }
-    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/renta`, dataToPost, headers).then(res => setState("Gastos Actualizados")).catch(error => setState(`Error , ${error}`))
+    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/renta`, dataToPost, headers).then(res => console.log("Gastos Actualizados")).catch(error => console.log(`Error , ${error}`))
   }
   function updateGastoGasolina(e) {
     e.preventDefault();
@@ -79,14 +78,14 @@ function GastosComponent() {
       concepto: `  Gasolina-- Fecha: ${new Date().toLocaleDateString()},  ${concepto},  Cantidad Shequels: ${gasolina}     `,
       gasolina: gasolina,
     }
-    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/gasolina`, dataToPost, headers).then(res => setState("Gastos Actualizados")).catch(error => setState(`Error , ${error}`))
+    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/gasolina`, dataToPost, headers).then(res => console.log("Gastos Actualizados")).catch(error => console.log(`Error , ${error}`))
   }
   function updateGastoDeuda(e) {
     e.preventDefault();
     const dataToPost = {
       deuda: deuda,
     }
-    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/deuda`, dataToPost, headers).then(res => setState("Gastos Actualizados")).catch(error => setState(`Error , ${error}`))
+    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/deuda`, dataToPost, headers).then(res => console.log("Gastos Actualizados")).catch(error => console.log(`Error , ${error}`))
   }
   function updateGastoComida(e) {
     e.preventDefault();
@@ -94,63 +93,63 @@ function GastosComponent() {
       concepto: `  Comida-- Fecha: ${new Date().toLocaleDateString()},  ${concepto},  Cantidad Shequels: ${comida}     `,
       comida: comida,
     }
-    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/comida`, dataToPost, headers).then(res => setState("Gastos Actualizados")).catch(error => setState(`Error , ${error}`))
+    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/comida`, dataToPost, headers).then(res => console.log("Gastos Actualizados")).catch(error => console.log(`Error , ${error}`))
   }
   function updateGastoCuba(e) {
     e.preventDefault();
     const dataToPost = {
       cuba: cuba,
     }
-    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/cuba`, dataToPost, headers).then(res => setState("Gastos Actualizados")).catch(error => setState(`Error , ${error}`))
+    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/cuba`, dataToPost, headers).then(res => console.log("Gastos Actualizados")).catch(error => console.log(`Error , ${error}`))
   }
   function updateGastoElectricidad(e) {
     e.preventDefault();
     const dataToPost = {
       electricidad: electricidad,
     }
-    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/electricidad`, dataToPost, headers).then(res => setState("Gastos Actualizados")).catch(error => setState(`Error , ${error}`))
+    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/electricidad`, dataToPost, headers).then(res => console.log("Gastos Actualizados")).catch(error => console.log(`Error , ${error}`))
   }
   function updateGastoAgua(e) {
     e.preventDefault();
     const dataToPost = {
       agua: agua,
     }
-    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/agua`, dataToPost, headers).then(res => setState("Gastos Actualizados")).catch(error => setState(`Error , ${error}`))
+    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/agua`, dataToPost, headers).then(res => console.log("Gastos Actualizados")).catch(error => console.log(`Error , ${error}`))
   }
   function updateGastoGas(e) {
     e.preventDefault();
     const dataToPost = {
       gas: gas,
     }
-    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/gas`, dataToPost, headers).then(res => setState("Gastos Actualizados")).catch(error => setState(`Error , ${error}`))
+    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/gas`, dataToPost, headers).then(res => console.log("Gastos Actualizados")).catch(error => console.log(`Error , ${error}`))
   }
   function updateGastoArnona(e) {
     e.preventDefault();
     const dataToPost = {
       arnona: arnona,
     }
-    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/arnona`, dataToPost, headers).then(res => setState("Gastos Actualizados")).catch(error => setState(`Error , ${error}`))
+    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/arnona`, dataToPost, headers).then(res => console.log("Gastos Actualizados")).catch(error => console.log(`Error , ${error}`))
   }
   function updateGastoHot(e) {
     e.preventDefault();
     const dataToPost = {
       hot: hot,
     }
-    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/hot`, dataToPost, headers).then(res => setState("Gastos Actualizados")).catch(error => setState(`Error , ${error}`))
+    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/hot`, dataToPost, headers).then(res => console.log("Gastos Actualizados")).catch(error => console.log(`Error , ${error}`))
   }
   function updateGastoInternet(e) {
     e.preventDefault();
     const dataToPost = {
       internet: internet,
     }
-    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/internet`, dataToPost, headers).then(res => setState("Gastos Actualizados")).catch(error => setState(`Error , ${error}`))
+    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/internet`, dataToPost, headers).then(res => console.log("Gastos Actualizados")).catch(error => console.log(`Error , ${error}`))
   }
   function updateGastoBl(e) {
     e.preventDefault();
     const dataToPost = {
       bl: bl,
     }
-    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/bl`, dataToPost, headers).then(res => setState("Gastos Actualizados")).catch(error => setState(`Error , ${error}`))
+    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/bl`, dataToPost, headers).then(res => console.log("Gastos Actualizados")).catch(error => console.log(`Error , ${error}`))
   }
   function updateGastoTarjetas(e) {
     e.preventDefault();
@@ -158,7 +157,7 @@ function GastosComponent() {
       concepto: `  Tarjetas-- Fecha: ${new Date().toLocaleDateString()},   ${concepto}, Cantidad Shequels:   ${tarjetas}    `,
       tarjetas: tarjetas,
     }
-    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/tarjetas`, dataToPost, headers).then(res => setState("Gastos Actualizados")).catch(error => setState(`Error , ${error}`))
+    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/tarjetas`, dataToPost, headers).then(res => console.log("Gastos Actualizados")).catch(error => console.log(`Error , ${error}`))
   }
   function updateGastoSalud(e) {
     e.preventDefault();
@@ -166,7 +165,7 @@ function GastosComponent() {
       concepto: `  Salud-- Fecha:  ${new Date().toLocaleDateString()},  ${concepto},  Cantidad Shequels: ${salud}    `,
       salud: salud,
     }
-    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/salud`, dataToPost, headers).then(res => setState("Gastos Actualizados")).catch(error => setState(`Error , ${error}`))
+    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/salud`, dataToPost, headers).then(res => console.log("Gastos Actualizados")).catch(error => console.log(`Error , ${error}`))
   }
   function updateGastoOtros(e) {
     e.preventDefault();
@@ -174,7 +173,7 @@ function GastosComponent() {
       concepto: `   Otros-- Fecha: ${new Date().toLocaleDateString()}, ${concepto}, Cantidad Shequels: ${otros}    `,
       otros: otros,
     }
-    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/otros`, dataToPost, headers).then(res => setState("Gastos Actualizados")).catch(error => setState(`Error , ${error}`))
+    axios.post(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosupdate/${mes}/otros`, dataToPost, headers).then(res => console.log("Gastos Actualizados")).catch(error => console.log(`Error , ${error}`))
   }
 
 
