@@ -8,7 +8,6 @@ import './style/ingresoscomponent.css'
 function IngresosComponent() {
   const { ingresos, setIngresos } = useContext(Context);
   const { token } = useContext(Context);
-  const [setState] = useState("");
   const [mesState, setMes] = useState("");
   const { mes } = useContext(Context);
   const headers = {
@@ -22,7 +21,7 @@ function IngresosComponent() {
     const data = {
       mes: mesState
     }
-    axios.post('http://localhost:5000/user/home/mes', data, headers).then(res => setState("Mes Cambiado")).catch(error => setState(`Error Posting , ${error}`))
+    axios.post('http://localhost:5000/user/home/mes', data, headers).then(res => console.log("Mes Cambiado")).catch(error => console.log(`Error Posting , ${error}`))
 
   };
 
@@ -32,7 +31,7 @@ function IngresosComponent() {
       total: ingresos
     }
 
-    axios.post('http://localhost:5000/user/home/ingresos', dataToPost, headers).then(res => setState(res.data)).catch(error => setState(`Error Posting , ${error}`));
+    axios.post('http://localhost:5000/user/home/ingresos', dataToPost, headers).then(res => console.log(res.data)).catch(error => console.log(`Error Posting , ${error}`));
     e.preventDefault();
   };
 

@@ -7,7 +7,6 @@ import './style/historia.css'
 
 function HistoriaPage() {
   const [gastos, setGastos] = useState([]);
-  const [setState] = useState("")
   const { token } = useContext(Context);
 
 
@@ -18,7 +17,7 @@ function HistoriaPage() {
   };
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/user/historia`, headers).then(res => setGastos(res.data)).catch(error => setState(error));
+    axios.get(`http://localhost:5000/user/historia`, headers).then(res => setGastos(res.data)).catch(error => console.log(error));
 
   })
   const dataArr = Object.values(gastos)

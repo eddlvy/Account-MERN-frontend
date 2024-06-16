@@ -6,9 +6,7 @@ import './style/mes.css';
 
 
 function GastosPage() {
-  const [gastos, setGastos] = useState({
-    concepto: []
-  });
+  const [gastos, setGastos] = useState([]);
   const { mes } = useContext(Context);
   const { token } = useContext(Context);
 
@@ -20,11 +18,11 @@ function GastosPage() {
   };
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/user/gastos/${mes}`, headers).then(res => setGastos(res.data.concepto)).catch(error => console.log(error));
+    axios.get(`http://localhost:5000/user/gastos/${mes}`, headers).then(res => setGastos(res.data.concepto || {})).catch(error => console.log(error));
 
   })
 
-  const conceptoArr = Object.values(gastos)
+  const conceptoArr = Object.values(gastos);
 
   return (
     <div>
