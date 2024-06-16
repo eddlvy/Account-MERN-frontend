@@ -10,9 +10,9 @@
   transition: all 0.3s;
 }
 
-.div-login:hover {
+/* .div-login:hover {
   transform: scale(1.1);
-}
+} */
 
 .form-login {
   display: flex;
