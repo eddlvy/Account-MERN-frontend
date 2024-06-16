@@ -52,7 +52,7 @@ function IngresosComponent() {
         <h1>Mes Seleccionado: <span className="mes">{mes}</span></h1>
         <form className="form-ingresos" onSubmit={handleIngresosSubmit} method="post">
           <label className="label-ingresos">Escribir Ingresos Totales Mes  </label>
-          <input className="input-ingresos" type="number" id="ingresos" value={ingresos} onChange={(e) => setIngresos(e.target.value)} />
+          <input className="input-ingresos" type="number" id="ingresos" onSubmit={(e) => setIngresos(e.target.value)} />
           <input className="submit-ingresos" type="submit" value="Click Enviar Ingresos" />
         </form>
         <h3>Ingresos Mes: {ingresos}</h3>

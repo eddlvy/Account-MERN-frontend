@@ -43,7 +43,7 @@ function GastosComponent() {
   // Plan context
   useEffect(() => {
     axios.get('https://account-app-2d28ea94e3bf.herokuapp.com/plan').then(res => setPlan(res.data[0])).catch(error => console.log(error), [plan, setPlan])
-  });
+  }, [{ ...gastos }]);
   // rerender handler effect
   useEffect(() => {
 
