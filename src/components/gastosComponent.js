@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, useMemo } from "react";
 import { Context } from "../context/context";
 import axios from "axios";
 import './style/gastoscomponent.css';
@@ -34,11 +34,12 @@ function GastosComponent() {
   const [otrosSum, setOtrosSum] = useState(0)
   const { total, setTotal } = useContext(Context)
   const { plan, setPlan } = useContext(Context)
-  const headers = {
+  const headers = useMemo(() => ({
     headers: {
       "Authorization": `Bearer ${token}`
     }
-  };
+  }), [token]);
+
 
   // Plan context
   useEffect(() => {
@@ -61,7 +62,7 @@ function GastosComponent() {
   useEffect(() => {
     axios.get(`https://account-app-2d28ea94e3bf.herokuapp.com/user/home/gastosget/${mes}`, headers)
       .then(res => setGastos(res.data)).catch(error => console.log("No hay Datos del mes en curso"))
-  });
+  }, [headers, mes]);
 
   // gasto update handlers
 
