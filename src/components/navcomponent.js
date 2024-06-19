@@ -16,7 +16,7 @@ function NavComponent() {
       } to="/user/home">Inicio</NavLink>
       <NavLink className={({ isActive, isPending }) =>
         isPending ? "pending" : isActive ? "active" : ""
-      } to="/user/gastos">Historial Gastos del Mes</NavLink>
+      } to="/user/extras">Horas Extras</NavLink>
       <NavLink className={({ isActive, isPending }) =>
         isPending ? "pending" : isActive ? "active" : ""
       } to="/user/plan">Cambiar Plan</NavLink>

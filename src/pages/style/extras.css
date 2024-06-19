@@ -1,0 +1,53 @@
+.horas-container {
+  display: flex;
+  gap: 0.5em;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding: 0.2em 3em;
+}
+
+.header {
+  display: flex;
+  gap: 3em;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-extras {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.list-extras {
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  list-style: none;
+
+}
+
+.extras-item {
+  font-size: 1.2em;
+  font-weight: 500;
+  font-style: italic;
+  padding: 0.5em;
+  border-radius: 9px;
+  background-color: #99e9f2;
+}
+
+.acumulado {
+  font-size: 1.4em;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.span {
+  border-radius: 5px;
+  background-color: #51cf66;
+  padding: 0.3em;
+}
