@@ -25,8 +25,8 @@ function HistoriaPage() {
   return (
     <div>
       <NavComponent></NavComponent>
-      <ul className="list">
-        {elemArr.map(elem => <li className="list-item">Mes: {elem.mes} <br></br> Gastos del Mes <ul className="inner-list">{elem.concepto.map((elem) => <li className="inner-list-item">{elem}</li>)}</ul>  </li>)}
+      <ul className="list-extras">
+        {elemArr.map(elem => <li className="list-item">Mes: {elem.mes} <br></br> Gastos del Mes <ul className="list-extras">{elem.concepto.map((elem) => <li className="extras-item">{elem}</li>)}</ul>  </li>)}
       </ul>
     </div>
   )
