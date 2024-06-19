@@ -38,7 +38,7 @@ function WelcomePage() {
     <div className="main-container">
       <div className="header">
         <h1 className="main-title">Bienvenido al Programa</h1>
-        <p className="date">{JSON.stringify(date.toLocaleDateString()).slice(1, 11)}</p>
+        <p className="date">{JSON.stringify(date.toLocaleDateString()).replace(/"/g, "")}</p>
       </div>
       <div className="container-actions">
         <img className="img" src={img} alt="calculator" />
